@@ -1,35 +1,49 @@
 #include<stdio.h>
 #include<stdlib.h>
-struct Node{
+struct node{
     int data;
-    struct Node*link;
-}*start=NULL;
-typedef struct Node node;
-node*getNode(int item)
+    struct node*link;
+
+};
+void insertion(struct node*head,int data)
 {
-    node*new_node=(node*)malloc(sizeof(node));
-    new_node->data=item;
-    new_node->link=NULL;
-}
-void insertFirst(int item)
-{
-    node*new_node=getNode(item);
-    new_node->link=start;
-    start=new_node;
-}
- void traversal()
-{
-    node*ptr=start;
-    while(ptr!=NULL)
+    struct node*ptr,*temp;
+    ptr=head;
+    temp=(struct node*)malloc(sizeof(struct node));
+    temp->data=data;
+    temp->link=NULL;
+    while(ptr->link!=NULL)
     {
-        printf("%d ",ptr->data);
         ptr=ptr->link;
     }
+    ptr->link=temp;
+
 }
-int main(){
-for(int i=0;i<10;i++)
+void print(struct node*head)
+{
+    while(head!=NULL)
     {
-        insertFirst(rand()%10);
+        printf("%d ",head->data);
+        head=head->link;
     }
-    traversal();
+}
+int main()
+{
+   struct node*head;
+   head=malloc(sizeof(struct node));
+   head->data=3;
+   head->link=NULL;
+    struct node*current=malloc(sizeof(struct node));
+    current->data=45;
+    head->link=current;
+    current=malloc(sizeof(struct node));
+    current->data=98;
+    head->link->link=current;
+    current=malloc(sizeof(struct node));
+    current->data=67;
+    head->link->link->link=current;
+    head->link->link->link->link=NULL;
+    insertion(head,69);
+    print(head);
+
 }
