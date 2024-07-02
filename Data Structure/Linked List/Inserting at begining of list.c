@@ -22,9 +22,8 @@ void traversal()
 {
     node*ptr;
     ptr=start;
-    while(ptr!=0)
+    while(ptr!=NULL)
     {
-        printf("%d",ptr->data);
         ptr=ptr->link;
     }
 }
