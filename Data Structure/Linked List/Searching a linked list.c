@@ -38,22 +38,15 @@ node *search(int item)
     node *ptr = start,*loc =NULL;
     while (ptr!=NULL)
     {
-        /*if(item<ptr->info)
-        {
-             ptr=ptr->link;
-
-        }*/
          if(item==ptr->info)
         {
             loc=ptr;
             break;
         }
         else
-            //break;
-            ptr =ptr->link;
+           ptr =ptr->link;
     }
     return loc;
-
 }
 int main()
 {
@@ -69,8 +62,5 @@ int main()
     printf(" \n Not Found ");
   else
     printf("\n %d is found at %X ",loc->info,loc);
-    //insretLoc(loc,10);
-    //traversal();
-
     return 0;
 }
