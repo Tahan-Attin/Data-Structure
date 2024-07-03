@@ -24,6 +24,7 @@ void traversal()
     ptr=start;
     while(ptr!=NULL)
     {
+        printf("%d ",ptr->data);
         ptr=ptr->link;
     }
 }
