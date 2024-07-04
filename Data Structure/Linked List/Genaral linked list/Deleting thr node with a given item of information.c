@@ -32,7 +32,7 @@ void deleteLoc(node*loc) {
         return;
     }
     node*prev=start;
-    while(prev->link!=NULL&&prev->link!=loc){
+    while(prev->link!=loc){
         prev=prev->link;
     }
     if(prev->link==loc) {
