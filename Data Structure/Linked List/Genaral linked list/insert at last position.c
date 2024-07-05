@@ -24,7 +24,6 @@ void insert_end()
    new_node=malloc(sizeof(node));
    printf("enter the element of node");
    scanf("%d",&new_node->data);
-   //ptr->link=new_node;
    new_node->link=NULL;
    while(ptr->link!=NULL)
    {
