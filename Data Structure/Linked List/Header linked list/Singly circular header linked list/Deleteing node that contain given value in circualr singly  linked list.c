@@ -56,6 +56,7 @@ void deleted(node*loc)
         tail->next=ptr->next;
         free(ptr);
     }
+    //prev=tail->next;
 
         while(prev->next!=loc)
         {
