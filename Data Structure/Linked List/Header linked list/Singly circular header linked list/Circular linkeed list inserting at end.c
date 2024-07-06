@@ -27,7 +27,7 @@ void traversal()
     node*p=tail->link;
     do
     {
-        printf("%d",p->data);
+        printf("%d ",p->data);
         p=p->link;
     }while(p!=tail->link);
 }
