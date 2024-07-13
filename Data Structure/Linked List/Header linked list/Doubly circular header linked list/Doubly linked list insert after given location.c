@@ -52,12 +52,22 @@ node*search(int data)
 void insert(node*loc,int data)
 {
     node*new_node=malloc(sizeof(node));
-    node*ptr2=loc->next;
-    new_node->data=data;
-    new_node->next=loc->next;
-    loc->next=new_node;
-    new_node->prev=loc;
-    ptr2->prev=new_node;
+    if(loc->next==NULL)
+    {
+        node*ptr2=loc->next;
+        new_node->data=data;
+        new_node->next=loc->next;
+        loc->next=new_node;
+        new_node->prev=loc;
+    }
+    else{
+        node*ptr2=loc->next;
+        new_node->data=data;
+        new_node->next=loc->next;
+        loc->next=new_node;
+        new_node->prev=loc;
+        ptr2->prev=new_node;
+    }
 }
 int main()
 {
@@ -67,7 +77,7 @@ int main()
     addBeg(11);
     traversal();
     printf("\n");
-    node*loc=search(10);
+    node*loc=search(11);
     if(loc==NULL)
     {
         printf("element not found");
