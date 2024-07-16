@@ -53,11 +53,10 @@ void deleted(node*loc)
     node*prev=tail->next;
     if(ptr==loc)
     {
-        tail->next=ptr->next;
-        free(ptr);
+        node*p=tail->next;
+        tail->next=p->next;
+        free(p);
     }
-    //prev=tail->next;
-
         while(prev->next!=loc)
         {
             prev=prev->next;
@@ -69,6 +68,7 @@ void deleted(node*loc)
         }
 if (tail == loc) {
         tail = prev;
+        tail->next=ptr;
     }
 }
 int main()
@@ -77,7 +77,7 @@ int main()
     addAtBeg(34);
     addAtBeg(67);
     addAtBeg(25);
-    node*l=search(45);
+    node*l=search(34);
     if(l==NULL)
     {
         printf("not found");
@@ -88,6 +88,3 @@ int main()
     }
     return 0;
 }
-
-
-
