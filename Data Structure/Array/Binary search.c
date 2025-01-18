@@ -33,9 +33,11 @@ int main()
     int size,e;
     printf("Enter the size of array");
     scanf("%d",&size);
-    printf("enter the value you want to insert");
+    printf("enter the value you want to find");
     scanf("%d",&e);
+    printf("enter the element of array");
     input(size);
     int k=binary_sarch(size,e);
-    printf("%d",k);
+    printf("\n");
+    printf("the value is in the index %d",k);
 }
