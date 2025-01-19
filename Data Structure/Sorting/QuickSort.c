@@ -6,7 +6,7 @@ int partition(int arr[],int low,int high)
     int j=high;
     while (i<j)
     {
-        while(arr[i]<= p)
+        while(arr[i]<=p)
         {
             i++;
         }
@@ -36,7 +36,6 @@ void quickSort(int arr[],int low,int high)
         quickSort(arr,pi + 1,high);
     }
 }
-
 int main()
 {
     int t;
