@@ -1,5 +1,5 @@
 #include<stdio.h>
-arr[100];
+int arr[100];
 void input_arr(int size)
 {
     for(int i=0;i<size;i++)
@@ -7,25 +7,29 @@ void input_arr(int size)
         scanf("%d",&arr[i]);
     }
 }
-
-void insertion(int l,int z)
+void insertion(int k,int l,int s)
 {
-    arr[z]=l;
-
-    for(int i=0;i<=z;i++)
+    for(int i=s-1;i>=k-1;i--)
     {
-        printf("%d",arr[i]);
+        arr[i+1]=arr[i];
+    }
+    arr[k-1]=l;
+    for(int k=0;k<=s;k++)
+    {
+        printf("%d",arr[k]);
     }
 }
 int main()
 {
-    int a,size;
-    printf("enter the size of array");
+    int a,b,size;
+    printf("enter the size of arry");
     scanf("%d",&size);
-    input_arr( size);
-    printf("enter the value of array");
+    input_arr(size);
+    printf("enter the position you want to insert");
     scanf("%d",&a);
-    insertion(a,size);
+    printf("enter the value you want to insert");
+    scanf("%d",&b);
+    insertion(a,b,size);
 
 
 }
