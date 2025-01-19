@@ -43,14 +43,14 @@ int main()
     printf("Enter the size of array");
     scanf("%d",&t);
     int arr[t];
-    for(int i=0; i<t; i++)
+    for(int i=0;i<t;i++)
     {
         scanf("%d",&arr[i]);
     }
     quickSort(arr,0,t-1);
-    for (int i = 0; i < t; i++)
+    for (int i=0;i<t;i++)
     {
-        printf("%d ", arr[i]);
+        printf("%d ",arr[i]);
     }
     return 0;
 }
