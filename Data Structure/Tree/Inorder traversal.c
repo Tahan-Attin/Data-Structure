@@ -15,9 +15,9 @@ struct node*creat()
         return 0;
     }
     nwep->data=x;
-    printf("Enter The Left Child of %d",x);
+    printf("Enter The Left Child of %d ",x);
     nwep->left=creat();
-    printf("Enter The Riht Child of %d",x);
+    printf("Enter The Right Child of %d ",x);
     nwep->right=creat();
     return nwep;
 }
